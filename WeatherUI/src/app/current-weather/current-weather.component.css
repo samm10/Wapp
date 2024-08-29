@@ -1,0 +1,33 @@
+/* Center the container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+  }
+  
+  /* Style the mat-card */
+  mat-card {
+    max-width: 600px;
+    width: 100%;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style the results section */
+  .results {
+    margin-top: 1rem;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  button {
+    display: block;
+    margin: 0 auto 1rem;
+  }
+  

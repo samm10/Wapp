@@ -1,0 +1,29 @@
+<div class="container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Weather Forecast</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field appearance="fill">
+          <mat-label>City</mat-label>
+          <input matInput [(ngModel)]="city" placeholder="Enter city name">
+        </mat-form-field>
+    
+        <button mat-raised-button color="primary" (click)="getForecast()">Get Forecast</button>
+  
+        <div *ngIf="forecast" class="results">
+          <h2>5-Day Forecast for {{ city }}</h2>
+          <div *ngFor="let item of forecast.list.slice(-5)">
+            <div><strong>Date:</strong> {{ item.dt | date:'short' }}</div>
+            <div><strong>Temperature:</strong> {{ item.main.temp }} K</div>
+            <div><strong>Weather:</strong> {{ item.weather[0].description }}</div>
+            <div><strong>Humidity:</strong> {{ item.main.humidity }}%</div>
+            <div><strong>Wind Speed:</strong> {{ item.wind.speed }} m/s</div>
+            <div><strong>Cloudiness:</strong> {{ item.clouds.all }}%</div>
+            <hr>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

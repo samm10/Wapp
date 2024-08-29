@@ -1,0 +1,33 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Current Weather</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <mat-label>City</mat-label>
+        <input matInput [(ngModel)]="city" placeholder="Enter city name">
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" (click)="getWeather()">Get Weather</button>
+
+      <div *ngIf="weatherData" class="results">
+        <h2>Current Weather in {{ weatherData.name }}</h2>
+        <p><strong>Temperature:</strong> {{ weatherData.main.temp }} K</p>
+        <p><strong>Feels Like:</strong> {{ weatherData.main.feels_Like }} K</p>
+        <p><strong>Minimum Temperature:</strong> {{ weatherData.main.temp_Min }} K</p>
+        <p><strong>Maximum Temperature:</strong> {{ weatherData.main.temp_Max }} K</p>
+        <p><strong>Pressure:</strong> {{ weatherData.main.pressure }} hPa</p>
+        <p><strong>Humidity:</strong> {{ weatherData.main.humidity }}%</p>
+        <p><strong>Visibility:</strong> {{ weatherData.visibility }} meters</p>
+        <p><strong>Wind Speed:</strong> {{ weatherData.wind.speed }} m/s</p>
+        <p><strong>Wind Degree:</strong> {{ weatherData.wind.deg }}°</p>
+        <p><strong>Wind Gust:</strong> {{ weatherData.wind.gust }} m/s</p>
+        <p><strong>Cloudiness:</strong> {{ weatherData.clouds.all }}%</p>
+        <p><strong>Sunrise:</strong> {{ weatherData.sys.sunrise | date:'shortTime' }}</p>
+        <p><strong>Sunset:</strong> {{ weatherData.sys.sunset | date:'shortTime' }}</p>
+        <p><strong>Coordinates:</strong> Latitude {{ weatherData.coord.lat }}, Longitude {{ weatherData.coord.lon }}</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
